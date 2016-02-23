@@ -174,6 +174,10 @@ def index():
             'stderr': stderr,
         }
 
+        logging.info('{} : {} \n{}'.format(
+          s, proc.returncode, stdout
+        ))
+
         # Log errors if a hook failed
         if proc.returncode != 0:
             logging.error('{} : {} \n{}'.format(
